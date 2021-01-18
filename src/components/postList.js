@@ -18,7 +18,7 @@ class PostList extends React.Component{
     }
 
     async getPosts() {
-        const res = await axios.get("http://192.168.0.108:5000/api/post");
+        const res = await axios.get("https://glacial-castle-99512.herokuapp.com/api/post");
         this.setState({ posts: res.data });
         console.log(res);
     }

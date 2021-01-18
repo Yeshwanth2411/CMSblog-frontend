@@ -17,7 +17,7 @@ export default function Login() {
     try {
       const loginUser = { email, password };
       const loginRes = await Axios.post(
-        "http://localhost:5000/api/user/login",
+        "https://glacial-castle-99512.herokuapp.com/api/user/login",
         loginUser
       );
       setUserData({

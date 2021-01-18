@@ -15,7 +15,7 @@ class Post extends React.Component {
     }
 
     async getPost() {
-        const res = await axios.get(`http://192.168.0.108:5000/api/post/${this.props.match.params.id}`);
+        const res = await axios.get(`https://glacial-castle-99512.herokuapp.com/api/post/${this.props.match.params.id}`);
         console.log(res);
         this.setState({ post: res.data });
     }

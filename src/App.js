@@ -26,12 +26,12 @@ export default function App() {
                 token = "";
             }
             const tokenRes = await Axios.post(
-                "http://localhost:5000/api/user/tokenIsValid",
+                "https://glacial-castle-99512.herokuapp.com/api/user/tokenIsValid",
                 null,
                 { headers: { "x-auth-token": token } }
             );
             if (tokenRes.data) {
-                const userRes = await Axios.get("http://localhost:5000/api/user/", {
+                const userRes = await Axios.get("https://glacial-castle-99512.herokuapp.com/api/user/", {
                     headers: { "x-auth-token": token },
                 });
                 setUserData({

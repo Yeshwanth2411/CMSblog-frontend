@@ -19,8 +19,8 @@ export default function Register() {
 
     try {
       const newUser = { email, password, passwordCheck, displayName };
-      await Axios.post("http://localhost:5000/api/user/register", newUser);
-      const loginRes = await Axios.post("http://localhost:5000/api/user/login", {
+      await Axios.post("https://glacial-castle-99512.herokuapp.com/api/user/register", newUser);
+      const loginRes = await Axios.post("https://glacial-castle-99512.herokuapp.com/api/user/login", {
         email,
         password,
       });
