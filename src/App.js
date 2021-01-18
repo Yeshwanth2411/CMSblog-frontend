@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -7,18 +7,20 @@ import PostList from "./components/postList";
 import Post from "./components/Post";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
-import UserContext from "./context/UserContext";
+import UserContext from "./context/userContext";
+import Axios from "axios";
+import Header from "./components/layout/Header";
 
 import "./style.css";
 
-class App extends React.Component{
 
+export default function App() {
     const [userData, setUserData] = useState({
         token: undefined,
         user: undefined,
     });
 
-    useEffect( () => {
+    useEffect(() => {
         const checkLoggedIn = async () => {
             let token = localStorage.getItem("auth-token");
             if (token === null) {
@@ -42,23 +44,23 @@ class App extends React.Component{
         };
 
         checkLoggedIn();
-}, []);
-    
-    render() {
-        return <BrowserRouter>
-            <UserContext.Provider value={{ userData, setUserData }}>
-                <Header />
-                <Navbar />
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
-                <Route path="/posts/:id" component={Post} />
-                <Route path="/posts/" component={PostList} />
-            </Switch>
-            </UserContext.Provider>
-        </BrowserRouter>;
-    }
-}
+    }, []);
 
-export default App;
+    return (
+        <>
+            <BrowserRouter>
+                <UserContext.Provider value={{ userData, setUserData }}>
+                    <Header />
+                    <Navbar />
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/register" component={Register} />
+                        <Route path="/posts/:id" component={Post} />
+                        <Route path="/posts/" component={PostList} />
+                    </Switch>
+                </UserContext.Provider>
+            </BrowserRouter>
+        </>
+    );
+}
