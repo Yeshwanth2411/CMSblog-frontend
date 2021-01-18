@@ -18,7 +18,8 @@ export default function AuthOptions() {
   };
 
   return (
-    <nav className="auth-options">
+    <nav className="navbar">
+      <div className="nav-container">
       {userData.user ? (
         <button onClick={logout}>Log out</button>
       ) : (
@@ -26,7 +27,8 @@ export default function AuthOptions() {
           <button onClick={register}>Register</button>
           <button onClick={login}>Log in</button>
         </>
-      )}
+          )}
+      </div>
     </nav>
   );
 }

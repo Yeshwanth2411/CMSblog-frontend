@@ -1,7 +1,11 @@
 import axios from "axios";
 import React from "react";
+import { Link } from "react-router-dom";
+import UserContext from "../context/userContext";
 
 class Post extends React.Component {
+
+    static contextType = UserContext;
     state = {
         post: {}
     };
@@ -25,7 +29,19 @@ class Post extends React.Component {
         </div>;
     }
     render() {
-        return (<div className="container">{ this.renderPost()}</div>);
+        const { userData } = this.context;
+        return (
+            <div className="container">
+                {userData.user ? (
+                    <div>{this.renderPost()}</div>
+                ) : (
+                        <div>
+                            <h2>You are not logged in</h2>
+                            <Link to="/login">Log in</Link>
+                        </div>
+                    )}
+                </div>
+                );
     }
 }
 

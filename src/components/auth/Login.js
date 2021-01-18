@@ -17,7 +17,7 @@ export default function Login() {
     try {
       const loginUser = { email, password };
       const loginRes = await Axios.post(
-        "http://localhost:5000/users/login",
+        "http://localhost:5000/api/user/login",
         loginUser
       );
       setUserData({
@@ -31,7 +31,7 @@ export default function Login() {
     }
   };
   return (
-    <div className="page">
+    <div className="container">
       <h2>Log in</h2>
       {error && (
         <ErrorNotice message={error} clearError={() => setError(undefined)} />

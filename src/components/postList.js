@@ -1,8 +1,14 @@
 import React from "react";
 import axios from "axios";
 import PostListItem from "./postListItem";
+import { Link } from "react-router-dom";
+import UserContext from "../context/userContext";
+
+
 
 class PostList extends React.Component{
+
+    static contextType = UserContext;
 
     state = {
         posts: []
@@ -24,7 +30,19 @@ class PostList extends React.Component{
     }
 
     render() {
-        return <div className="container"><div className="post-list">{this.renderList()}</div></div>;
+        const { userData } = this.context;
+        return (
+            <div className="container">
+                {userData.user ? (
+                    <div className="post-list">{this.renderList()}</div>
+                ) : (
+                        <div>
+                            <h2>You are not logged in</h2>
+                            <Link to="/login">Log in</Link>
+                        </div>
+                )}
+            </div>
+            );
     }
 }
 

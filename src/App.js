@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-
-import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import PostList from "./components/postList";
 import Post from "./components/Post";
@@ -28,12 +26,12 @@ export default function App() {
                 token = "";
             }
             const tokenRes = await Axios.post(
-                "http://localhost:5000/users/tokenIsValid",
+                "http://localhost:5000/api/user/tokenIsValid",
                 null,
                 { headers: { "x-auth-token": token } }
             );
             if (tokenRes.data) {
-                const userRes = await Axios.get("http://localhost:5000/users/", {
+                const userRes = await Axios.get("http://localhost:5000/api/user/", {
                     headers: { "x-auth-token": token },
                 });
                 setUserData({
@@ -51,7 +49,6 @@ export default function App() {
             <BrowserRouter>
                 <UserContext.Provider value={{ userData, setUserData }}>
                     <Header />
-                    <Navbar />
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/login" component={Login} />

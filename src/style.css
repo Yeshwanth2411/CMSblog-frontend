@@ -65,11 +65,24 @@ body {
 .navbar .links a {
 	font-size: 1.2rem;
 	color: #7c7c7c;
+	padding-right: 1rem;
 }
 
 .navbar .links a:hover {
 	font-weight: 600;
 	color: #000000;
+}
+
+.navbar button {
+	font-size: 1.2rem;
+	color: #7c7c7c;
+	background: none;
+}
+
+.navbar button:hover {
+	font-weight: 600;
+	color: #000000;
+	background: none;
 }
 
 h1,
@@ -138,39 +151,6 @@ button {
 	padding: 1rem;
 }
 
-.container {
-	margin: 0 auto;
-	max-width: 900px;
-}
-
-/* header */
-
-#header {
-	height: 50px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #e02525;
-}
-#header .title {
-	margin: 0;
-	padding: 0 1rem;
-	color: #ffffff;
-}
-#header .auth-options {
-	height: 100%;
-	display: flex;
-}
-#header .auth-options button {
-	padding: 0 1rem;
-	background-color: #b91b1b;
-	color: #ffffff;
-	font-size: 1.1rem;
-}
-#header .auth-options button:hover {
-	background-color: #be3a3a;
-}
-
 /* form */
 
 .form label,
@@ -206,17 +186,6 @@ button {
 	font-size: 1.1rem;
 }
 
-/* todo list */
-
-.todo-list ul {
-	list-style: disc;
-	cursor: pointer;
-}
-
-.todo-list li:hover {
-	text-decoration: line-through;
-}
-
 /* error notice */
 
 .error-notice {
@@ -239,7 +208,7 @@ button {
 
 /* media queries */
 
-@media screen and (max-width: 550px) {
+/* @media screen and (max-width: 550px) {
 	#header .title {
 		font-size: 1.2rem;
 	}
@@ -247,4 +216,4 @@ button {
 		padding: 0 0.5rem;
 		font-size: 0.9rem;
 	}
-}
+} */
