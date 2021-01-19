@@ -208,7 +208,7 @@ button {
 
 /* media queries */
 
-/* @media screen and (max-width: 550px) {
+@media screen and (max-width: 550px) {
 	#header .title {
 		font-size: 1.2rem;
 	}
@@ -216,4 +216,4 @@ button {
 		padding: 0 0.5rem;
 		font-size: 0.9rem;
 	}
-} */
+}

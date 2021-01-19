@@ -13,6 +13,7 @@ export default function Home() {
                 <div>
                     <h1>Blog!</h1>
                     <p>Create a beautiful blog that fits your style. Choose from a selection of easy-to-use templates – all with flexible layouts and hundreds of background images – or design something new!</p>
+                    <Link to="/addpost">Add New Post</Link>
                     <h3>Latest Posts:</h3>
                     <PostList />
                 </div>

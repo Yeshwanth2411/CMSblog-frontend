@@ -8,6 +8,7 @@ import Register from "./components/auth/Register";
 import UserContext from "./context/userContext";
 import Axios from "axios";
 import Header from "./components/layout/Header";
+import AddPost from "./components/addPost";
 
 import "./style.css";
 
@@ -55,6 +56,7 @@ export default function App() {
                         <Route path="/register" component={Register} />
                         <Route path="/posts/:id" component={Post} />
                         <Route path="/posts/" component={PostList} />
+                        <Route path="/addpost" component={AddPost} />
                     </Switch>
                 </UserContext.Provider>
             </BrowserRouter>
